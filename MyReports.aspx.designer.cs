@@ -11,25 +11,25 @@ namespace Booth_Caroline_HW4
 {
 
 
-    public partial class SiteMaster
+    public partial class MyReports
     {
 
         /// <summary>
-        /// LoginView1 control.
+        /// MyReportsPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.WebControls.Panel MyReportsPanel;
 
         /// <summary>
-        /// MainContent control.
+        /// ReportsTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Repeater ReportsTable;
     }
 }

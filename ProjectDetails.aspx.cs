@@ -51,11 +51,25 @@ namespace Booth_Caroline_HW4
                 } else
                 {
                     LoadProjectDetails(projectID);
+                    Session["ProjectID"] = projectID;
                 }
             }
         }
+        protected void btnStartNewReport_Click(object sender, EventArgs e)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                // Retrieve product ID from the query string
+                string projectId = Request.QueryString["id"];
 
-
+                // Redirect to the Reports page
+                Response.Redirect("Reports.aspx?projectID=" + projectId);
+            }
+        }
     }
 }
     

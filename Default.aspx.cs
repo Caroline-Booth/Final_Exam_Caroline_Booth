@@ -17,17 +17,17 @@ namespace Booth_Caroline_HW4
         public DataTable GetDataFromDatabase()
         {
             DataTable dt = new DataTable();
-
+            //connection to the database 
             string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString)) 
             {
-                string query = "EXEC sp_GetAllInstitutions";
+                string query = "EXEC sp_GetAllInstitutions"; //stored procedure
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
-                        da.Fill(dt);
+                        da.Fill(dt); 
                     }
                 }
             }
@@ -37,7 +37,7 @@ namespace Booth_Caroline_HW4
         protected void Page_Load(object sender, EventArgs e)
         {
                 Institutions.DataSource = GetDataFromDatabase();
-                Institutions.DataBind();
+                Institutions.DataBind(); //bind data and load page 
         }
             
         

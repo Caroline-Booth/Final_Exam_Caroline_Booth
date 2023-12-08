@@ -11,52 +11,43 @@ namespace Booth_Caroline_HW4
 {
 
 
-    public partial class ProjectDetails
+    public partial class Reports
     {
 
         /// <summary>
-        /// lblProjectName control.
+        /// errorMsgPan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProjectName;
+        protected global::System.Web.UI.WebControls.Panel errorMsgPan;
 
         /// <summary>
-        /// lblStartDate control.
+        /// ObservationTablePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStartDate;
+        protected global::System.Web.UI.WebControls.Panel ObservationTablePanel;
 
         /// <summary>
-        /// lblEndDate control.
+        /// ObservationTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEndDate;
+        protected global::System.Web.UI.WebControls.Repeater ObservationTable;
 
         /// <summary>
-        /// lblDescription control.
+        /// btnCreateNewObservation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
-
-        /// <summary>
-        /// btnCreateNewReport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateNewReport;
+        protected global::System.Web.UI.WebControls.Button btnCreateNewObservation;
     }
 }

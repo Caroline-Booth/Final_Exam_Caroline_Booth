@@ -25,6 +25,8 @@ namespace Booth_Caroline_HW4
 
                 string query;
                 SqlCommand cmd;
+                
+                //this one uses the ID to get research areas 
 
                 if (!string.IsNullOrEmpty(idValue))
                 {
@@ -35,7 +37,7 @@ namespace Booth_Caroline_HW4
                 }
                 else
                 {
-                  
+                  //all research areas if no value is given for ID
                     query = "EXEC sp_GetAllResearchAreas";
                     cmd = new SqlCommand(query, conn);
                 }

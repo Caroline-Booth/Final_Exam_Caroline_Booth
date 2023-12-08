@@ -11,52 +11,34 @@ namespace Booth_Caroline_HW4
 {
 
 
-    public partial class ProjectDetails
+    public partial class AddObservations
     {
 
         /// <summary>
-        /// lblProjectName control.
+        /// txtObservationNotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProjectName;
+        protected global::System.Web.UI.WebControls.TextBox txtObservationNotes;
 
         /// <summary>
-        /// lblStartDate control.
+        /// lblReportID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStartDate;
+        protected global::System.Web.UI.WebControls.Label lblReportID;
 
         /// <summary>
-        /// lblEndDate control.
+        /// btnSubmitObservation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEndDate;
-
-        /// <summary>
-        /// lblDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
-
-        /// <summary>
-        /// btnCreateNewReport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateNewReport;
+        protected global::System.Web.UI.WebControls.Button btnSubmitObservation;
     }
 }
