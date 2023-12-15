@@ -28,7 +28,7 @@ namespace Booth_Caroline_HW4
                 }
             }
         }
-
+//Authenticating user and redirecting to login page
         protected void ShowReports()
         {
             if (User.Identity.IsAuthenticated)
@@ -40,7 +40,7 @@ namespace Booth_Caroline_HW4
                 string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    
+   //authenticating user and selecting all reports where projectID is equal and the volunteer is the authenticated user                  
                     conn.Open();
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -56,7 +56,7 @@ namespace Booth_Caroline_HW4
                 ReportsTable.DataSource = dt;
                 ReportsTable.DataBind();
                 
-            }
+            }//binding the data 
             else
             {
                 Response.Redirect("Login.aspx");
@@ -71,7 +71,7 @@ namespace Booth_Caroline_HW4
                 DeleteReport(ReportID);
             }
         }
-
+//this is my extra thing. I had to look this up but apparently you need e.CommandName and then it takes the ReportID and deletes that report 
         private void DeleteReport(string ReportID)
         {
             string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ConnectionString;
@@ -85,7 +85,7 @@ namespace Booth_Caroline_HW4
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
-            }
+            }//method to delete the report used in method above. executing query 
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -98,10 +98,10 @@ namespace Booth_Caroline_HW4
                     cmd.ExecuteNonQuery();
 
 
-                }
+                }//executing query where reports equal. needed to delte both report and the observations for it to run correctly 
             }
 
             Response.Redirect("MyReports.aspx");
         }
-    }
+    } //after that redirect to MyReports 
 }
