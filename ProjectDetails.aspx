@@ -12,7 +12,7 @@
                     <p><asp:Label ID="lblEndDate" runat="server" Text="End Date"></asp:Label></p>
                     <p><asp:Label ID="lblDescription" runat="server" Text="Description"></asp:Label></p> 
 
-                    <asp:Button ID="btnCreateNewReport" runat="server" Text="Start New Report" OnClick="btnStartNewReport_Click" CssClass="btn" />
+                    <asp:Button ID="btnCreateNewReport" runat="server" Text="Start New Report" OnClick="btnStartNewReport_Click" CssClass="btn btn-info" />
                 <td>
                <tr>
            

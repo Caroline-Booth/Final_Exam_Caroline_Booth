@@ -38,7 +38,7 @@
                
                 </asp:Repeater>
                 <br />
-                    <asp:Button ID="btnCreateNewObservation" runat="server" Text="New Observation" OnClick="btnStartNewObservation_Click" CssClass="btn" />
+                    <asp:Button ID="btnCreateNewObservation" runat="server" Text="New Observation" OnClick="btnStartNewObservation_Click" CssClass="btn btn-info" />
            
         </asp:Panel>
 

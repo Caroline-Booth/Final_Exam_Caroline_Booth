@@ -15,14 +15,17 @@ namespace Booth_Caroline_HW4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String UserID = HttpContext.Current.User.Identity.GetUserId();
-            if (UserID != null)
+            if (!IsPostBack)
             {
-                ShowReports();
-            }
-            else
-            {
-                Response.Redirect("Login.aspx");
+                String UserID = HttpContext.Current.User.Identity.GetUserId();
+                if (UserID != null)
+                {
+                    ShowReports();
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
             }
         }
 
@@ -58,6 +61,47 @@ namespace Booth_Caroline_HW4
             {
                 Response.Redirect("Login.aspx");
             }
+        }
+
+        protected void User_Delete(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName =="Delete")
+            {
+                string ReportID = e.CommandArgument.ToString();
+                DeleteReport(ReportID);
+            }
+        }
+
+        private void DeleteReport(string ReportID)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string deleteObs = "DELETE FROM Observations WHERE ReportID = @ReportID";
+
+                using (SqlCommand cmd = new SqlCommand(deleteObs, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ReportID", ReportID);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string deleteObs = "DELETE FROM Reports WHERE ReportID = @ReportID";
+
+                using (SqlCommand cmd = new SqlCommand(deleteObs, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ReportID", ReportID);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+
+                }
+            }
+
+            Response.Redirect("MyReports.aspx");
         }
     }
 }
